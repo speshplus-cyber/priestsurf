@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'">
+  <title>PriestSurf</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header id="tabbar">
+    <div id="tabs" role="tablist"></div>
+    <button id="newTabBtn" class="icon-btn" title="New tab (Ctrl+T)">+</button>
+  </header>
+
+  <nav id="toolbar">
+    <button class="icon-btn" id="backBtn" title="Back (Alt+←)"></button>
+    <button class="icon-btn" id="fwdBtn" title="Forward (Alt+→)"></button>
+    <button class="icon-btn" id="reloadBtn" title="Reload (Ctrl+R)"></button>
+
+    <div id="omni">
+      <span id="secIcon" title="Connection"></span>
+      <input id="omniInput" spellcheck="false" autocomplete="off" placeholder="Search privately or enter address — try “!w privacy”, “12*7”, “5 km to miles”">
+      <button class="icon-btn small" id="starBtn" title="Bookmark this page (Ctrl+D)"></button>
+      <div id="suggest" hidden></div>
+    </div>
+
+    <button class="icon-btn" id="shieldBtn" title="Privacy shields (Ctrl+Shift+P)"><span id="shieldCount" class="badge" hidden>0</span></button>
+    <button class="pill" id="torBtn" title="Route all traffic through Tor">Tor: off</button>
+    <button class="icon-btn" id="readerBtn" title="Reader mode (Alt+R)"></button>
+    <button class="icon-btn" id="aiBtn" title="Assistant: summarize & ask (Ctrl+J)"></button>
+    <button class="icon-btn" id="phoneBtn" title="Phone link: connect your phone (Ctrl+Shift+M)"></button>
+    <button class="icon-btn" id="bmBtn" title="Bookmarks (Ctrl+Shift+B)"></button>
+    <button class="icon-btn" id="menuBtn" title="Settings (Ctrl+,)"></button>
+  </nav>
+
+  <div id="permbar" class="bar" hidden></div>
+  <div id="errbar" class="bar warn" hidden></div>
+
+  <main id="main">
+    <div id="views"></div>
+    <aside id="panel" hidden>
+      <div class="panel-head"><h2 id="panelTitle"></h2><button class="icon-btn small" id="panelClose" title="Close">×</button></div>
+      <div id="panelBody"></div>
+    </aside>
+  </main>
+
+  <div id="findbar" hidden>
+    <input id="findInput" placeholder="Find in page" spellcheck="false">
+    <span id="findCount"></span>
+    <button class="icon-btn small" id="findPrev" title="Previous">↑</button>
+    <button class="icon-btn small" id="findNext" title="Next">↓</button>
+    <button class="icon-btn small" id="findClose" title="Close">×</button>
+  </div>
+
+  <div id="toast" hidden></div>
+
+  <script src="smart.js"></script>
+  <script src="page-tools.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>

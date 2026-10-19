@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b08cff"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fde68a"/>
+      <stop offset="1" stop-color="#f5a524"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.45" r="0.5">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="8" y="8" width="240" height="240" rx="56" fill="url(#bg)"/>
+  <rect x="8" y="8" width="240" height="240" rx="56" fill="url(#glow)"/>
+  <!-- main four-point sparkle -->
+  <path d="M120 40 C128 92 140 104 192 112 C140 120 128 132 120 184 C112 132 100 120 48 112 C100 104 112 92 120 40 Z" fill="url(#gold)"/>
+  <!-- small sparkle -->
+  <path d="M184 150 C187 170 192 175 212 178 C192 181 187 186 184 206 C181 186 176 181 156 178 C176 175 181 170 184 150 Z" fill="#fff4cf"/>
+</svg>

@@ -1,0 +1,14 @@
+{
+  "name": "PriestSurf",
+  "short_name": "PriestSurf",
+  "description": "Companion app for the PriestSurf private browser.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f0e17",
+  "theme_color": "#0f0e17",
+  "icons": [
+    { "src": "icon.png", "sizes": "256x256", "type": "image/png", "purpose": "any" }
+  ]
+}

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src data:">
+<title>New Tab</title>
+<style>
+  :root { --bg:#0f0e17; --card:#1f1d2a; --border:#2e2b40; --text:#ecebf4; --muted:#9d99b3; --accent:#b08cff; --gold:#f5c26b; --tor:#a855f7; }
+  :root.light { --bg:#f6f5fb; --card:#ffffff; --border:#d6d3e4; --text:#1d1b26; --muted:#65617a; --accent:#6d3fe0; --gold:#b57b10; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; min-height:100%; background:var(--bg); color:var(--text); font:14px/1.5 "Segoe UI",system-ui,sans-serif; }
+  body { display:flex; flex-direction:column; align-items:center; padding:12vh 16px 40px; background:radial-gradient(900px 500px at 50% -10%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%), var(--bg); }
+  .logo { display:flex; align-items:center; gap:14px; margin-bottom:6px; }
+  .mark { width:54px; height:54px; border-radius:16px; display:grid; place-items:center; background:linear-gradient(135deg,var(--accent),var(--tor)); color:#fff; font-size:28px; box-shadow:0 10px 30px color-mix(in srgb, var(--accent) 40%, transparent); }
+  h1 { margin:0; font-size:42px; letter-spacing:-1px; } h1 span { color:var(--gold); }
+  .tag { color:var(--muted); margin:0 0 28px; }
+  form { width:min(640px,100%); }
+  input { width:100%; height:52px; padding:0 22px; border-radius:26px; border:1px solid var(--border); background:var(--card); color:var(--text); font-size:16px; outline:none; }
+  input:focus { border-color:var(--accent); }
+  .stats { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin:22px 0 30px; }
+  .stat { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:10px 16px; text-align:center; min-width:150px; }
+  .stat b { display:block; font-size:22px; color:var(--accent); }
+  .stat.tor b { color:var(--tor); }
+  .tiles { display:grid; grid-template-columns:repeat(auto-fill,minmax(130px,1fr)); gap:12px; width:min(720px,100%); }
+  a.tile { display:flex; flex-direction:column; align-items:center; gap:8px; padding:16px 10px; border-radius:14px; background:var(--card); border:1px solid var(--border); color:var(--text); text-decoration:none; text-align:center; }
+  a.tile:hover { border-color:var(--accent); }
+  .av { width:38px; height:38px; border-radius:10px; display:grid; place-items:center; font-weight:800; color:#fff; }
+  .tile .t { font-size:12px; max-width:100%; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+  .tips { margin-top:30px; color:var(--muted); font-size:12px; text-align:center; max-width:640px; line-height:1.9; }
+  code { background:var(--card); border:1px solid var(--border); border-radius:6px; padding:1px 6px; color:var(--text); }
+</style>
+</head>
+<body>
+  <div class="logo"><div class="mark">✦</div><h1>Priest<span>Surf</span></h1></div>
+  <p class="tag">Private by default. Smart by design.</p>
+  <form id="f"><input id="q" placeholder="Search privately…" autocomplete="off" spellcheck="false" autofocus></form>
+  <div class="stats">
+    <div class="stat"><b id="blocked">0</b>trackers blocked</div>
+    <div class="stat" id="torStat"><b id="tor">Off</b>Tor network</div>
+    <div class="stat"><b>0</b>history saved</div>
+  </div>
+  <div class="tiles" id="tiles"></div>
+  <div class="tips">
+    Try <code>!w quantum computing</code> · <code>!yt lo-fi</code> · <code>(24*7)/3</code> · <code>72 f to c</code> · <code>5 miles to km</code><br>
+    <code>Alt+R</code> reader mode · <code>Ctrl+J</code> summarize &amp; ask · <code>Ctrl+Shift+U</code> new identity
+  </div>
+  <script src="newtab.js"></script>
+</body>
+</html>

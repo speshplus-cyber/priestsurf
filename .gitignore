@@ -1,0 +1,8 @@
+node_modules/
+dist/
+# Installers are published as GitHub Release assets, not committed
+website/downloads/
+*.exe
+*.blockmap
+selftest.png
+*.log

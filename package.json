@@ -1,0 +1,56 @@
+{
+  "name": "priestsurf",
+  "productName": "PriestSurf",
+  "version": "1.0.0",
+  "description": "PriestSurf - a privacy-first, intelligent web browser.",
+  "author": "PriestSurf",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "icon": "electron build/make-icon.js",
+    "site": "node tools/serve-site.js",
+    "dist": "electron-builder --win nsis portable"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^33.3.1",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.priestsurf.browser",
+    "productName": "PriestSurf",
+    "copyright": "PriestSurf",
+    "electronDist": "node_modules/electron/dist",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "src/**/*",
+      "build/icon.png",
+      "package.json"
+    ],
+    "win": {
+      "icon": "build/icon.ico",
+      "signAndEditExecutable": true
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "PriestSurf",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "artifactName": "PriestSurf-Setup-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "PriestSurf-Portable-${version}.${ext}"
+    }
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  }
+}
